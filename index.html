@@ -1,219 +1,972 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ContentCatalyst - Ignite Your Online Presence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #4a00e0;
-            --secondary-color: #8e2de2;
-            --accent-color: #f8a51d;
-            --text-color: #2c3e50;
-            --bg-color: #f9f9f9;
-        }
-        body, html {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-        .page-container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: #ffffff;
-            padding: 40px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.8em;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .packages {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-            padding: 40px 0;
-        }
-        .package {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            flex: 1 1 300px;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        .package:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-color);
-        }
-        .package img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        .package h2 {
-            margin-top: 0;
-            color: var(--primary-color);
-            font-size: 1.8em;
-            font-weight: 600;
-        }
-        .package p {
-            font-size: 1em;
-            flex-grow: 1;
-        }
-        .package ul {
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-        .price {
-            font-size: 1.5em;
-            color: var(--secondary-color);
-            font-weight: bold;
-            margin: 20px 0;
-        }
-        .button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #ffffff;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            text-align: center;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .button:hover {
-            background-color: var(--primary-color);
-            transform: scale(1.05);
-        }
-        .testimonial {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 40px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .testimonial q {
-            font-style: italic;
-            font-size: 1.1em;
-            color: var(--text-color);
-        }
-        .testimonial p {
-            margin-top: 10px;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        @media (max-width: 768px) {
-            .packages {
-                flex-direction: column;
-            }
-            .package {
-                margin-bottom: 30px;
-            }
-            header h1 {
-                font-size: 2.2em;
-            }
-            header p {
-                font-size: 1em;
-            }
-        }
-    </style>
-    <script src="https://gumroad.com/js/gumroad.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karthik Kadapa – Software Engineering Director</title>
+  <meta name="description" content="Karthik Kadapa – Software Engineering Director with 15+ years of experience in cloud modernization, platform resiliency, and AI strategy. 5X Azure & 2X AWS Certified." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ===================== RESET & BASE ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #0f1117;
+      --surface:     #161b27;
+      --sidebar:     #0d1220;
+      --card:        #1c2335;
+      --border:      #242d42;
+      --accent:      #4f8ef7;
+      --accent2:     #7b61ff;
+      --accent-glow: rgba(79,142,247,0.18);
+      --green:       #3dd68c;
+      --gold:        #f5a623;
+      --text-primary:   #edf0f7;
+      --text-secondary: #8b95a9;
+      --text-muted:     #576070;
+      --font-body:  'Inter', sans-serif;
+      --font-head:  'Space Grotesk', sans-serif;
+      --radius:    10px;
+      --radius-lg: 18px;
+      --transition: 0.25s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.65;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: #82b4ff; }
+
+    /* ===================== LAYOUT ===================== */
+    .page-wrapper {
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      min-height: 100vh;
+    }
+
+    /* ===================== SIDEBAR ===================== */
+    .sidebar {
+      background: var(--sidebar);
+      border-right: 1px solid var(--border);
+      padding: 48px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    /* Avatar + Name */
+    .profile-block { text-align: center; }
+
+    .avatar-ring {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 40px var(--accent-glow);
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--sidebar);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -1px;
+    }
+
+    .profile-name {
+      font-family: var(--font-head);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .profile-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    /* Contact */
+    .sidebar-section { display: flex; flex-direction: column; gap: 10px; }
+    .sidebar-label {
+      font-family: var(--font-head);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      transition: color var(--transition);
+    }
+    .contact-item:hover { color: var(--text-primary); }
+    .contact-item i {
+      width: 14px;
+      color: var(--accent);
+      flex-shrink: 0;
+      font-size: 0.8rem;
+    }
+    .contact-item a { color: inherit; }
+    .contact-item a:hover { color: var(--accent); }
+
+    /* Cert badges */
+    .badge-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 20px;
+      border: 1px solid;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .badge-azure { color: #4f8ef7; border-color: rgba(79,142,247,.35); background: rgba(79,142,247,.08); }
+    .badge-aws   { color: #f5a623; border-color: rgba(245,166,35,.35);  background: rgba(245,166,35,.08); }
+    .badge-db    { color: #3dd68c; border-color: rgba(61,214,140,.35);  background: rgba(61,214,140,.08); }
+
+    /* Skills pills */
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tag {
+      font-size: 0.68rem;
+      font-weight: 500;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: var(--card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+    .skill-tag:hover {
+      background: var(--accent-glow);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ===================== MAIN CONTENT ===================== */
+    .main-content {
+      padding: 56px 56px 80px;
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    /* Section styling */
+    .section { margin-bottom: 52px; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .section-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(79,142,247,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-icon i { color: var(--accent); font-size: 0.85rem; }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+
+    /* Hero summary */
+    .hero-summary {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 52px;
+    }
+    .hero-summary::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+    .hero-tagline {
+      font-family: var(--font-head);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .hero-summary p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* Core skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      transition: all var(--transition);
+    }
+    .skill-card:hover {
+      border-color: rgba(79,142,247,.5);
+      box-shadow: 0 0 20px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+    .skill-card-title {
+      font-family: var(--font-head);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .skill-card-title i { font-size: 0.75rem; }
+    .skill-card p {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Experience entries */
+    .exp-list { display: flex; flex-direction: column; gap: 28px; }
+
+    .exp-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      position: relative;
+      transition: all var(--transition);
+    }
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 20px; bottom: 20px;
+      width: 3px;
+      border-radius: 0 3px 3px 0;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .exp-card:hover {
+      border-color: rgba(79,142,247,.4);
+      box-shadow: 0 4px 24px rgba(0,0,0,.35);
+    }
+    .exp-card:hover::before { opacity: 1; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+    .exp-company {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .exp-date {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(79,142,247,.1);
+      border: 1px solid rgba(79,142,247,.25);
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .exp-role {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent2);
+      margin-bottom: 4px;
+    }
+    .exp-location {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .exp-location i { font-size: 0.65rem; }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .exp-bullets li {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .exp-bullets li::before {
+      content: '▸';
+      color: var(--accent);
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      margin-top: 3px;
+    }
+
+    /* Education */
+    .edu-list { display: flex; flex-direction: column; gap: 16px; }
+    .edu-card {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      transition: all var(--transition);
+    }
+    .edu-card:hover {
+      border-color: rgba(79,142,247,.4);
+      transform: translateX(4px);
+    }
+    .edu-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: rgba(123,97,255,.12);
+      border: 1px solid rgba(123,97,255,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .edu-icon i { color: var(--accent2); font-size: 0.9rem; }
+    .edu-degree {
+      font-family: var(--font-head);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    .edu-school {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+    .edu-note {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    /* Certifications */
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      transition: all var(--transition);
+    }
+    .cert-card:hover {
+      border-color: rgba(245,166,35,.4);
+      box-shadow: 0 0 16px rgba(245,166,35,.08);
+      transform: translateY(-2px);
+    }
+    .cert-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .cert-link {
+      font-size: 0.68rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .cert-link i { font-size: 0.6rem; }
+    .cert-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .cert-badge-azure { background: rgba(79,142,247,.15); color: #4f8ef7; }
+    .cert-badge-aws   { background: rgba(245,166,35,.15);  color: #f5a623; }
+    .cert-badge-db    { background: rgba(61,214,140,.15);  color: #3dd68c; }
+
+    /* Achievements */
+    .achieve-list { display: flex; flex-direction: column; gap: 12px; }
+    .achieve-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      transition: all var(--transition);
+    }
+    .achieve-item:hover {
+      border-color: rgba(61,214,140,.4);
+      transform: translateX(4px);
+    }
+    .achieve-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+    }
+    .achieve-icon-gold { background: rgba(245,166,35,.12); color: #f5a623; }
+    .achieve-icon-green { background: rgba(61,214,140,.12); color: #3dd68c; }
+    .achieve-icon-blue { background: rgba(79,142,247,.12); color: #4f8ef7; }
+    .achieve-text {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .achieve-text strong { color: var(--text-primary); font-weight: 600; }
+    .achieve-text a { color: var(--accent); font-size: 0.72rem; }
+
+    /* Tech stack pills */
+    .tech-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tech-pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .tech-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-glow);
+      transform: translateY(-1px);
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 6px 0;
+    }
+
+    /* ===================== ANIMATIONS ===================== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 30px var(--accent-glow); }
+      50%       { box-shadow: 0 0 55px rgba(79,142,247,.32); }
+    }
+
+    .sidebar { animation: slideInLeft .5s ease both; }
+    .main-content { animation: fadeInUp .55s .1s ease both; }
+    .avatar-ring { animation: pulse-glow 4s ease-in-out infinite; }
+
+    .exp-card, .edu-card, .cert-card, .achieve-item, .skill-card {
+      animation: fadeInUp .45s ease both;
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 900px) {
+      .page-wrapper { grid-template-columns: 1fr; }
+      .sidebar {
+        position: static;
+        height: auto;
+        padding: 36px 28px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .main-content { padding: 36px 28px 60px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .cert-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .exp-header { flex-direction: column; gap: 8px; }
+      .main-content { padding: 24px 18px 50px; }
+      .sidebar { padding: 28px 18px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="page-container">
-        <header>
-            <div class="container">
-                <h1>ContentCatalyst</h1>
-                <p>Supercharge Your Online Presence with Premium, SEO-Optimized Blog Content</p>
-            </div>
-        </header>
+  <div class="page-wrapper">
 
-        <div class="container">
-            <div class="packages">
-                <div class="package">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Starter Package">
-                    <h2>Starter Package</h2>
-                    <p>Kickstart your content strategy with high-quality, engaging blog posts.</p>
-                    <ul>
-                        <li>3 SEO-optimized articles/month</li>
-                        <li>Expert proofreading & plagiarism check</li>
-                        <li>2 social media posts per article</li>
-                        <li>Monthly performance report</li>
-                    </ul>
-                    <p class="price">$299/month</p>
-                    <a class="button gumroad-button" href="https://gum.co/XXXXXX">Ignite Your Growth</a>
-                </div>
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar">
 
-                <div class="package">
-                    <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pro Package">
-                    <h2>Pro Package</h2>
-                    <p>Establish your brand as an industry leader with comprehensive content marketing.</p>
-                    <ul>
-                        <li>6 SEO-optimized articles/month</li>
-                        <li>Expert proofreading & plagiarism check</li>
-                        <li>4 social media posts per article</li>
-                        <li>Keyword research & content strategy</li>
-                        <li>Bi-weekly performance reports</li>
-                    </ul>
-                    <p class="price">$549/month</p>
-                    <a class="button gumroad-button" href="https://gum.co/XXXXXX">Dominate Your Niche</a>
-                </div>
-
-                <div class="package">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Enterprise Package">
-                    <h2>Enterprise Package</h2>
-                    <p>Full-scale content domination for businesses serious about explosive growth.</p>
-                    <ul>
-                        <li>10 SEO-optimized articles/month</li>
-                        <li>Expert proofreading & plagiarism check</li>
-                        <li>Daily social media content calendar</li>
-                        <li>Advanced SEO & content strategy</li>
-                        <li>Weekly performance & strategy calls</li>
-                        <li>Dedicated content manager</li>
-                    </ul>
-                    <p class="price">$999/month</p>
-                    <a class="button gumroad-button" href="https://gum.co/XXXXXX">Scale Your Success</a>
-                </div>
-            </div>
-
-            <div class="testimonial">
-                <q>ContentCatalyst transformed our online presence. Our organic traffic increased by 300% in just 3 months!</q>
-                <p>- Sarah J., CEO of TechInnovate</p>
-            </div>
+      <div class="profile-block">
+        <div class="avatar-ring">
+          <div class="avatar-inner">KK</div>
         </div>
-    </div>
+        <p class="profile-name">Karthik Kadapa</p>
+        <p class="profile-title">Software Engineering Director<br>Cloud Modernization &amp; AI Strategy</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Contact -->
+      <div class="sidebar-section">
+        <p class="sidebar-label">Contact</p>
+        <div class="contact-item"><i class="fas fa-phone"></i>(414) 336-6263</div>
+        <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:karthikkadapa88@gmail.com">karthikkadapa88@gmail.com</a></div>
+        <div class="contact-item"><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/karthikkadapa" target="_blank">linkedin.com/in/karthikkadapa</a></div>
+        <div class="contact-item"><i class="fab fa-github"></i><a href="https://github.com/karthikkadapa" target="_blank">github.com/karthikkadapa</a></div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i>Milwaukee, WI</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Certifications Summary -->
+      <div class="sidebar-section">
+        <p class="sidebar-label">Certifications</p>
+        <div class="badge-grid">
+          <span class="badge badge-azure"><i class="fab fa-microsoft"></i>Azure ×5</span>
+          <span class="badge badge-aws"><i class="fab fa-aws"></i>AWS ×2</span>
+          <span class="badge badge-db"><i class="fas fa-database"></i>Databricks</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Tech Stack -->
+      <div class="sidebar-section">
+        <p class="sidebar-label">Technical Skills</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Java/J2EE</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">ReactJS</span>
+          <span class="skill-tag">React Native</span>
+          <span class="skill-tag">NodeJS</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Swift</span>
+          <span class="skill-tag">Dart/Flutter</span>
+          <span class="skill-tag">GoLang</span>
+          <span class="skill-tag">Rust</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Azure</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Databricks</span>
+          <span class="skill-tag">Snowflake</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Microservices</span>
+          <span class="skill-tag">PowerBI</span>
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">ML / GenAI</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="main-content">
+
+      <!-- Hero Summary -->
+      <div class="hero-summary">
+        <p class="hero-tagline">Professional Summary</p>
+        <p>Results-driven Engineering Leader with <strong style="color:var(--text-primary)">15+ years of experience</strong> spanning software engineering, cloud architecture, and product management. Proven track record of leading complex modernization initiatives and managing large-scale platform delivery in highly regulated <strong style="color:var(--text-primary)">financial and healthcare environments</strong>. Deep technical foundation in Java/J2EE and API integrations, coupled with extensive experience navigating enterprise architecture, risk assessments, and compliance guardrails. Adept at balancing platform reliability and incident management with the strategic execution of multi-year technical roadmaps.</p>
+      </div>
+
+      <!-- Core Skills -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon"><i class="fas fa-layer-group"></i></div>
+          <h2 class="section-title">Core Competencies</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-card-title"><i class="fas fa-users-cog"></i>Engineering Leadership &amp; Delivery</div>
+            <p>Agile Delivery, Cross-functional Stakeholder Management, CI/CD Optimization, Release Risk Reduction</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-title"><i class="fas fa-cloud"></i>Architecture &amp; Modernization</div>
+            <p>Cloud Modernization, Build vs. Buy Analysis, Service-Oriented Architecture, Microservices</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-title"><i class="fas fa-plug"></i>Core Technologies &amp; Integration</div>
+            <p>Java/J2EE, REST APIs, Cloud Platforms (AWS, Azure), Databricks, Microsoft Fabric, Azure Synapse</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-title"><i class="fas fa-shield-alt"></i>Compliance &amp; Operations</div>
+            <p>Finance &amp; Healthcare Regulated Environments, Risk &amp; Compliance Guardrails, Observability, Data Governance</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon"><i class="fas fa-briefcase"></i></div>
+          <h2 class="section-title">Work Experience</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="exp-list">
+
+          <!-- US Bank -->
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">U.S. Bank</div>
+                <div class="exp-role">Senior Manager – Data Analytics &amp; AI</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i>Milwaukee, WI</div>
+              </div>
+              <span class="exp-date">Jan 2023 – Present</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Defined multi-year AI product strategy and owned roadmaps for AI and analytics platforms, translating business and regulatory requirements into target use cases and delivery milestones.</li>
+              <li>Led cross-functional teams to design and deliver shared AI and cloud platforms, aggressively identifying reuse opportunities to scale trusted capabilities and improve operational efficiency across the enterprise.</li>
+              <li>Drove enterprise adoption of developer productivity tooling (GitHub Copilot, Tableau Cloud Pulse AI, PowerBI Copilot) by establishing rollout strategies, success metrics, and governance guardrails.</li>
+              <li>Partnered with Enterprise Architecture, Senior Leadership, Risk, Info Security and Compliance teams to navigate a regulated environment, ensuring secure, compliant-by-design adoption of AI solutions.</li>
+              <li>Evaluated build vs. buy decisions and modernized enterprise data pipelines using Microsoft Synapse and Fabric shortcuts, emphasizing reliability and scalability.</li>
+              <li>Led cross-org onboarding of Tableau Cloud by navigating enterprise architecture reviews, risk assessments, and complex dependencies.</li>
+            </ul>
+          </div>
+
+          <!-- Excel Global -->
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">Excel Global Solutions, Inc.</div>
+                <div class="exp-role">Engineering Manager</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i>Remote</div>
+              </div>
+              <span class="exp-date">Apr 2022 – Jan 2023</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Supervised and led a team of 20 peers in developing a Telemedicine Flutter Mobile App; hands-on built ReactJS and NodeJS APIs resulting in <strong>35% incremental revenue in 6 months</strong>.</li>
+              <li>Architected and reduced overall AWS costs by <strong>50%</strong> by applying the AWS Well-Architected Framework and budget controls; raised ~$2,500 from startup fund sources for cloud infrastructure.</li>
+              <li>Managed 20+ Software Engineers, QA Engineers, and UI/UX SMEs to establish the technical vision and product roadmap.</li>
+              <li>Partnered with the UX research and design team to create and test product designs aligned with clinical workflows.</li>
+            </ul>
+          </div>
+
+          <!-- Geisinger -->
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">Geisinger</div>
+                <div class="exp-role">Senior Software Engineer – Health Innovation</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i>Danville, PA</div>
+              </div>
+              <span class="exp-date">Aug 2021 – Apr 2022</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Authored 30 Google Apigee API Proxies and published 10 APIs for vendors to integrate Patient Health Information securely into Patient Bedside Smart TVs.</li>
+              <li>Launched FHIR Apps to EPIC App Orchard by integrating EMR FHIR Data Platforms.</li>
+              <li>Accelerated expansion of Fresh Food Farmacy and ConnectedCare365 Mobile Apps for iOS and Android.</li>
+              <li>Supervised Telemedicine, Patient Engagement, and Behavioral Health teams for care coordination.</li>
+            </ul>
+          </div>
+
+          <!-- Northwell Health -->
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">Northwell Health</div>
+                <div class="exp-role">Senior Software Engineer – Digital Health &amp; Research IT</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i>New York, NY</div>
+              </div>
+              <span class="exp-date">Apr 2016 – Aug 2021</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Spearheaded end-to-end Mobile/Web App development with HIPAA and PHI-compliant security; overhauled legacy source code improving runtime performance by <strong>80%</strong>.</li>
+              <li>Designed and implemented front-end &amp; backend API systems following HIPAA compliance deployed to Microsoft Azure Cloud, leading to increased customer satisfaction.</li>
+              <li>Developed and deployed <em>LogPAL</em> — a de novo app for Head &amp; Neck Cancer patients in the Radiation Oncology department.</li>
+              <li>Built end-to-end Swift &amp; React Native iOS production Mobile App and APIs for a one-stop-shop ObGyn service line app.</li>
+              <li>Unified Health Information Exchange APIs with REDCap and other electronic data capture systems.</li>
+              <li>Architected solutions leveraging HIE APIs, Databases, and Clinical Decision Support tools such as RedHat JBoss BPM Suite.</li>
+              <li>Integrated Philips Biosensor wearables for continuous Remote Patient Monitoring (heart rate, respiratory rate, fall detection).</li>
+            </ul>
+          </div>
+
+          <!-- State Farm -->
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">State Farm</div>
+                <div class="exp-role">Full-Stack Software Engineer</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i>Chennai, India</div>
+              </div>
+              <span class="exp-date">Jan 2013 – Dec 2013</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Engineered Service-Oriented Architecture (SOA) web services using Java/J2EE to enhance system interoperability for core insurance operations.</li>
+            </ul>
+          </div>
+
+          <!-- eBay -->
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">eBay</div>
+                <div class="exp-role">Full-Stack Software Engineer</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i>Chennai, India</div>
+              </div>
+              <span class="exp-date">Apr 2011 – Dec 2012</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Heavily involved in building, deploying, and scaling the high-volume eBay SellerAPI Project using Java/J2EE and SOA architecture.</li>
+            </ul>
+          </div>
+
+          <!-- VidaDolce -->
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">VidaDolce LLC</div>
+                <div class="exp-role">Mobile App Developer Intern</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i>Madison, WI</div>
+              </div>
+              <span class="exp-date">Summer 2015</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Designed and developed <em>NutriVitah</em> — a restaurant recommendation iOS App in Objective-C/Xcode with personalized dietary preference filtering.</li>
+              <li>Leveraged Parse SDK/Cloud for data storage; deployed for external testing via TestFlight on iTunesConnect.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h2 class="section-title">Education</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="edu-list">
+          <div class="edu-card">
+            <div class="edu-icon"><i class="fas fa-university"></i></div>
+            <div>
+              <p class="edu-degree">Master of Science (M.S.) – Computer Science</p>
+              <p class="edu-school">University of Wisconsin–Milwaukee</p>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon"><i class="fas fa-university"></i></div>
+            <div>
+              <p class="edu-degree">Bachelor of Technology (B.Tech.) – Computer Science</p>
+              <p class="edu-school">Jawaharlal Nehru Technological University (JNTU), India</p>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon"><i class="fas fa-briefcase"></i></div>
+            <div>
+              <p class="edu-degree">MBA</p>
+              <p class="edu-school">University of Massachusetts Amherst</p>
+              <p class="edu-note">Pursued (discontinued)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon"><i class="fas fa-certificate"></i></div>
+          <h2 class="section-title">Certifications</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <span class="cert-badge cert-badge-azure">Azure</span>
+            <p class="cert-title">5× Microsoft Azure Certifications</p>
+            <p class="cert-link"><i class="fab fa-microsoft"></i>Microsoft Certified</p>
+          </div>
+          <div class="cert-card">
+            <span class="cert-badge cert-badge-aws">AWS</span>
+            <p class="cert-title">AWS Certified Solutions Architect – Associate</p>
+            <a class="cert-link" href="https://www.credly.com/badges/ef47a487-ddef-4efd-83cb-6c42b7ac0a9c/public_url" target="_blank"><i class="fas fa-external-link-alt"></i>View on Credly</a>
+          </div>
+          <div class="cert-card">
+            <span class="cert-badge cert-badge-aws">AWS</span>
+            <p class="cert-title">AWS Certified Cloud Practitioner</p>
+            <a class="cert-link" href="https://www.credly.com/badges/9541a21b-96be-4321-929b-c1cd5a03eed2/public_url" target="_blank"><i class="fas fa-external-link-alt"></i>View on Credly</a>
+          </div>
+          <div class="cert-card">
+            <span class="cert-badge cert-badge-db">Databricks</span>
+            <p class="cert-title">Databricks Fundamentals &amp; GenAI</p>
+            <a class="cert-link" href="https://credentials.databricks.com/0188cd34-e525-4810-bd81-017820e6e878" target="_blank"><i class="fas fa-external-link-alt"></i>View Credential</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements & Publications -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon"><i class="fas fa-trophy"></i></div>
+          <h2 class="section-title">Achievements &amp; Publications</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="achieve-list">
+          <div class="achieve-item">
+            <div class="achieve-icon achieve-icon-gold"><i class="fas fa-trophy"></i></div>
+            <p class="achieve-text"><strong>Top 5 SharkTank AI COE Team – Hackathon at U.S. Bank.</strong> Recognized for innovative AI solution in the enterprise AI Center of Excellence competition.</p>
+          </div>
+          <div class="achieve-item">
+            <div class="achieve-icon achieve-icon-green"><i class="fas fa-file-alt"></i></div>
+            <p class="achieve-text"><strong>Publication (JMIR Formative Research):</strong> "A Mobile Patient-Facing App for Tracking Patient-Reported Outcomes in Head and Neck Cancer Survivors: Single-Arm Feasibility Study" — <a href="https://formative.jmir.org/2021/3/e24667/" target="_blank">formative.jmir.org</a></p>
+          </div>
+          <div class="achieve-item">
+            <div class="achieve-icon achieve-icon-green"><i class="fas fa-book"></i></div>
+            <p class="achieve-text"><strong>Publication (ScienceDirect):</strong> Same study cross-published at — <a href="https://www.sciencedirect.com/org/science/article/pii/S2561326X21002110" target="_blank">sciencedirect.com</a></p>
+          </div>
+          <div class="achieve-item">
+            <div class="achieve-icon achieve-icon-blue"><i class="fas fa-flask"></i></div>
+            <p class="achieve-text"><strong>Research Assistant – University of Wisconsin–Milwaukee:</strong> Collaborated under Prof. Jake Luo to architect solutions bridging text and image knowledge databases; engineered full-stack applications using Java/J2EE, RESTful Web Services, JavaScript, MySQL, and Twitter Bootstrap.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon"><i class="fas fa-code"></i></div>
+          <h2 class="section-title">Full Technical Stack</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="tech-pills">
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">ReactJS</span>
+          <span class="tech-pill">React Native</span>
+          <span class="tech-pill">NodeJS</span>
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">HTML / CSS</span>
+          <span class="tech-pill">SQL</span>
+          <span class="tech-pill">MS SQL Server</span>
+          <span class="tech-pill">Java / J2EE</span>
+          <span class="tech-pill">Swift</span>
+          <span class="tech-pill">Dart / Flutter</span>
+          <span class="tech-pill">Objective-C</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Machine Learning</span>
+          <span class="tech-pill">GenAI</span>
+          <span class="tech-pill">GoLang</span>
+          <span class="tech-pill">Rust</span>
+          <span class="tech-pill">Microsoft Azure</span>
+          <span class="tech-pill">AWS</span>
+          <span class="tech-pill">Microsoft Fabric</span>
+          <span class="tech-pill">Azure Synapse</span>
+          <span class="tech-pill">Databricks</span>
+          <span class="tech-pill">Snowflake</span>
+          <span class="tech-pill">REST APIs</span>
+          <span class="tech-pill">Microservices</span>
+          <span class="tech-pill">API Management</span>
+          <span class="tech-pill">SOA</span>
+          <span class="tech-pill">FHIR / HL7</span>
+          <span class="tech-pill">Google Apigee</span>
+          <span class="tech-pill">GitHub Copilot</span>
+          <span class="tech-pill">PowerBI</span>
+          <span class="tech-pill">Tableau</span>
+          <span class="tech-pill">Data Visualization</span>
+          <span class="tech-pill">Cloud Computing</span>
+          <span class="tech-pill">CI/CD</span>
+          <span class="tech-pill">Docker</span>
+          <span class="tech-pill">DataOps</span>
+          <span class="tech-pill">Data Governance</span>
+        </div>
+      </div>
+
+    </main>
+  </div>
 </body>
 </html>
