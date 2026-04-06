@@ -529,17 +529,17 @@
             font-size: 0.8rem;
             color: var(--text-secondary);
             line-height: 1.65;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
+            padding-left: 1.2em;
+            position: relative;
         }
 
         .exp-bullets li::before {
             content: '▸';
             color: var(--accent);
-            flex-shrink: 0;
             font-size: 0.7rem;
-            margin-top: 3px;
+            position: absolute;
+            left: 0;
+            top: 0.18em;
         }
 
         /* Education */
@@ -1101,7 +1101,7 @@
                         </div>
                         <ul class="exp-bullets">
                             <li>Spearheaded end-to-end Mobile/Web App development with HIPAA and PHI-compliant security;
-                                overhauled legacy source code improving runtime performance by <strong>80%</strong>.
+                                overhauled legacy source code improving runtime performance by 80%.
                             </li>
                             <li>Designed and implemented front-end &amp; backend API systems following HIPAA compliance
                                 deployed to Microsoft Azure Cloud, leading to increased customer satisfaction.</li>
