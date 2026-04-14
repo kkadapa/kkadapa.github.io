@@ -1,6 +1,6 @@
 # Hi, I'm Karthik Kadapa! 👋
 
-**Software Engineering Director | Cloud Modernization & Platform Resiliency**
+**Technical Product Leader | Cloud Modernization & Platform Resiliency**
 **5× Azure Certified | 2× AWS Certified | Databricks Certified**
 
 📍 Milwaukee, WI &nbsp;|&nbsp; 📧 [karthikkadapa88@gmail.com](mailto:karthikkadapa88@gmail.com) &nbsp;|&nbsp; 🔗 [linkedin.com/in/karthikkadapa](https://linkedin.com/in/karthikkadapa) &nbsp;|&nbsp; 🌐 [kkadapa.github.io](https://kkadapa.github.io)
@@ -9,11 +9,11 @@
 
 ## About Me
 
-Results-driven Engineering Leader with **15+ years of experience** spanning software engineering, cloud architecture, and product management. Proven track record of leading complex modernization initiatives and managing large-scale platform delivery in highly regulated **financial and healthcare environments**.
+Results-driven Technical Product Leader with **15+ years of experience** spanning software engineering, cloud architecture, and product management. Proven track record of leading complex modernization initiatives and managing large-scale platform delivery in highly regulated **financial and healthcare environments**.
 
 Deep technical foundation in Java/J2EE and API integrations, coupled with extensive experience navigating enterprise architecture, risk assessments, and compliance guardrails. Adept at balancing platform reliability with the strategic execution of multi-year technical roadmaps.
 
-- 🏦 Currently: **Senior Manager – Data Analytics & AI** at U.S. Bank
+- 🏦 Currently: **Technical Product Manager – Data Analytics & AI** at U.S. Bank
 - ☁️ Specialties: Cloud Modernization, AI Strategy, Platform Resiliency, Regulated Environments
 - 🏥 Domain expertise: Financial Services & Digital Health (HIPAA, PHI, FHIR)
 - 🏆 Top 5 SharkTank AI COE Hackathon team at U.S. Bank
